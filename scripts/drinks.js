@@ -1,12 +1,11 @@
 fetch("fruit-data.json")
         .then(response => response.json())
         .then(data => {
-          // Get select elements
           const select1 = document.getElementById('fruit1');
           const select2 = document.getElementById('fruit2');
           const select3 = document.getElementById('fruit3');
 
-          // Populate select elements with options
+          //options
           data.forEach(fruit => {
             const option = document.createElement('option');
             option.value = fruit.id;
@@ -79,7 +78,7 @@ fetch("fruit-data.json")
               
             const outputDiv = document.getElementById('output');
             
-            // Only display the output if the form has been submitted
+            //display output after form has been submitted
             if (fruit1 !== "" && fruit2 !== "" && fruit3 !== "") {
               outputDiv.innerHTML = output;
               outputDiv.style.display = 'flex';
